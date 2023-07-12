@@ -24,6 +24,8 @@ import { printModals } from "./modals-shows.js";
 
 import { darkMode } from "./dark-mode.js";
 
+import { showAlertBuy } from "./show-alerts.js";
+
 async function main() {
   const res = {
     products:
@@ -31,6 +33,7 @@ async function main() {
     cart: JSON.parse(localStorage.getItem("cart")) || {},
   };
 
+  darkMode();
   printProducts(res);
   showCart();
   addToCartFromProducts(res);
@@ -41,25 +44,25 @@ async function main() {
   printExpandCards(res);
   filterMixItUp();
   printModals(res);
-  darkMode()
+  showAlertBuy(res)
 
   window.onscroll = () => {
     showMenu();
   };
 
-  window.onload = () => {
-    window.setTimeout(() => {
+  setTimeout(() => {
+    const loaderHTML = document.querySelector("#loader");
+    loaderHTML.classList.add("loader__hiden");
+    document.body.classList.remove("hidden");
+  }, 100);
 
-      const loaderHTML = document.querySelector('#loader')
-      loaderHTML.classList.add("loader__hiden");
-      loaderHTML.classList.remove('loader__red')
-      document.body.classList.remove("hidden");
-    }, 500);
-  };
+  document.querySelector(".bx-menu-alt-right").addEventListener("click", () => {
+    document
+      .querySelector(".menu__responsive")
+      .classList.toggle("hidden__menu");
+  });
 
-  document.querySelector('.bx-menu-alt-right').addEventListener('click', () => {
-    document.querySelector('.menu__responsive').classList.toggle('hidden__menu')
-  })
+
 }
 
 main();
