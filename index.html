@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"
+        integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./src/js/main.js" defer></script>
+    <title>E-commerce Academlo</title>
+</head>
+
+<body class="hidden">
+    <div class="main__container">
+
+        <section id="loader" class="loader__red">
+            <i class='bx bx-shape-triangle'></i>
+        </section>
+
+        <header class="header__container">
+            <nav class="nav__container">
+                <div class="logo">
+                    <i class='bx bx-shape-triangle'></i>
+                    <h1>STORE</h1>
+                </div>
+
+                <div class="implements">
+                    <i class='bx bxs-sun bx-spin-hover'></i>
+                    <i class='bx bxs-basket bx-tada-hover'>
+                        <span class="cart__unit"></span>
+                    </i>
+                    <i class='bx bx-menu-alt-right'></i>
+                </div>
+            </nav>
+        </header>
+
+        <div class="menu__responsive hidden__menu">
+            <a href="#">HOME</a>
+            <a href="#filters">PRODUCTS</a>
+        </div>
+
+        <div class="container">
+            <div class="expand">
+
+            </div>
+
+            <div class="btns__filter" id="filters">
+                <button type="button" id="all" data-filter="all" class="btn__filter">ALL</button>
+                <button type="button" id="shirt" data-filter=".shirt" class="btn__filter">SHIRTS</button>
+                <button type="button" id="hoddie" data-filter=".hoddie" class="btn__filter">HODDIES</button>
+                <button type="button" id="sweater" data-filter=".sweater" class="btn__filter">SWEATER</button>
+            </div>
+
+            <main class="products" id="productsRef">
+
+            </main>
+
+        </div>
+
+        <section class="modals">
+
+        </section>
+
+        <div class="cart">
+            <div class="cart__products"></div>
+            <div class="cart__total">
+                <div class="cart__total__info">
+                    <p>Units: <span class="unit__info"></span></p>
+                    <p>Total: $<span class="total__info"></span></p>
+                </div>
+                <button class="btn__buy">BUY</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="info__footer">
+                <div class="our__information">
+                    <h3>Our Information</h3>
+                    <a href="#">Bogotá - Colombia</a>
+                </div>
+                <ul class="about__us">
+                    <li>
+                        <h3>About Us</h3>
+                    </li>
+                    <li><a href="#">Support Center</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Copy Right</a></li>
+                </ul>
+                <ul class="products__footer">
+                    <li>
+                        <h3>Products</h3>
+                    </li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Hoddies</a></li>
+                    <li><a href="#">Sweaters</a></li>
+                </ul>
+                <div class="social">
+                    <h3>Social</h3>
+                    <ul>
+                        <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="data__student">
+                <p>Edwar León Maldonado</p>
+                <p>edwar.leon.m@gmail.com</p>
+                <a href="">Que buen repositorio este</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
