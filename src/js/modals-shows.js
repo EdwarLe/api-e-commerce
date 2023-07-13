@@ -2,15 +2,6 @@ import { blurEffectRemove } from "./blur-effect.js";
 import { addToCartFromModals } from "./handles.js";
 import { blurEffectAdd } from "./blur-effect.js";
 
-export function showCart() {
-  document.querySelector(".bxs-basket").addEventListener("click", () => {
-    document.querySelector(".cart").classList.toggle("show__cart");
-    document.querySelector(".modals").classList.remove("modals__hidden");
-
-    blurEffectRemove();
-  });
-}
-
 export function printModals(res) {
   const modalsHTML = document.querySelector(".modals");
   const productsHTML = document.querySelector(".products");

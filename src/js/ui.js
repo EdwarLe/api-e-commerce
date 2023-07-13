@@ -72,7 +72,6 @@ export function printExpandCards(res) {
   const hoddie = res.products.slice(7, 8);
   const sweater = res.products.slice(16, 17);
 
-
   html += `
             <div class="img__expand">
               <img src="${shirt[0].image}" alt="${shirt[0].name}">
@@ -85,14 +84,14 @@ export function printExpandCards(res) {
               <img src="${hoddie[0].image}" alt="${hoddie[0].name}">
               <div class="info__expand">
                 <p>${hoddie[0].description}</p>
-                <a href="#all">VER MÁS</a>
+                <a href="#filters">VER MÁS</a>
               </div>
             </div>
             <div class="img__expand">
               <img src="${sweater[0].image}" alt="${sweater[0].name}">
               <div class="info__expand">
                 <p>${sweater[0].description}</p>
-                <a href="#all">VER MÁS</a>
+                <a href="#filters">VER MÁS</a>
               </div>
             </div>`;
 

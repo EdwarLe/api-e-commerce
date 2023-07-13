@@ -16,13 +16,15 @@
 <body class="hidden">
     <div class="main__container">
 
-<!-- ------LOADER------ -->
+        <!-- ------LOADER------ -->
 
         <section id="loader" class="loader__red">
             <i class='bx bx-shape-triangle'></i>
         </section>
 
-<!-- ------NAV-BAR------ -->
+        <!-- ------BTN-UP------ -->
+        <div class="btn__up"><i class='bx bxs-chevron-up-circle'></i></div>
+        <!-- ------NAV-BAR------ -->
 
         <header class="header__container">
             <nav class="nav__container">
@@ -32,7 +34,9 @@
                 </div>
 
                 <div class="implements">
-                    <i class='bx bxs-sun bx-spin-hover'></i>
+                    <div class="moon__sun">
+                        <i class='bx bxs-sun bx-spin-hover'></i>
+                    </div>
                     <i class='bx bxs-basket bx-tada-hover'>
                         <span class="cart__unit"></span>
                     </i>
@@ -41,7 +45,7 @@
             </nav>
         </header>
 
-<!-- ------RESPONSIVE--MENU------ -->
+        <!-- ------RESPONSIVE--MENU------ -->
 
 
         <div class="menu__responsive hidden__menu">
@@ -49,7 +53,7 @@
             <a href="#filters">PRODUCTS</a>
         </div>
 
-<!-- ------MAIN-CONTAINER------ -->
+        <!-- ------MAIN-CONTAINER------ -->
 
 
         <div class="container">
@@ -58,7 +62,7 @@
             </div>
 
             <div class="btns__filter" id="filters">
-                <button type="button" id="all" data-filter="all" class="btn__filter">ALL</button>
+                <button type="button" id="all" data-filter="all" class="btn__filter btn__filter--active">ALL</button>
                 <button type="button" id="shirt" data-filter=".shirt" class="btn__filter">SHIRTS</button>
                 <button type="button" id="hoddie" data-filter=".hoddie" class="btn__filter">HODDIES</button>
                 <button type="button" id="sweater" data-filter=".sweater" class="btn__filter">SWEATER</button>
@@ -70,7 +74,7 @@
 
         </div>
 
-<!-- ------MODALS------ -->
+        <!-- ------MODALS------ -->
 
 
         <section class="modals"></section>
@@ -80,7 +84,7 @@
                 <i class='bx bx-x-circle'></i>
                 <h2 class="alarm__out">Lo sentimos</h2>
                 <p class="text__description__out">Pero no hay más existencias de este maravilloso producto</p>
-                <p class="confirm">OK</p>
+                <p class="confirm__out">OK</p>
             </div>
 
             <div class="alert alert__delete">
@@ -98,7 +102,7 @@
             </div>
         </section>
 
-<!-- ------CART------ -->
+        <!-- ------CART------ -->
 
         <div class="cart">
             <div class="cart__products"></div>
@@ -111,7 +115,7 @@
             </div>
         </div>
 
-<!-- ------FOOTER------ -->
+        <!-- ------FOOTER------ -->
 
 
         <div class="footer">

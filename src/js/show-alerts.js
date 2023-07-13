@@ -1,23 +1,17 @@
 import { blurEffectAdd, blurEffectRemove } from "./blur-effect.js";
 import { payButton } from "./pay-button.js";
+import { printToCart, printTotal } from "./ui.js";
 
 export function showAlertSoldOut() {
   const alertsHTML = document.querySelector(".alerts");
   const alertOutStockHTML = document.querySelector(".alert__out__stock");
-  const alarmOutHTML = document.querySelector(".alarm__out");
-  const confirmOutHTML = document.querySelector(".confirm");
-  const textDescriptionOutHTML = document.querySelector(
-    ".text__description__out"
-  );
-
- 
 
   alertsHTML.classList.add("alerts__show");
   alertOutStockHTML.classList.add("alert__out__stock__show");
   blurEffectAdd();
 
   alertsHTML.addEventListener("click", (e) => {
-    if (e.target.classList.contains("confirm")) {
+    if (e.target.classList.contains("confirm__out")) {
       alertsHTML.classList.remove("alerts__show");
       alertOutStockHTML.classList.remove("alert__out__stock__show");
 
@@ -27,8 +21,8 @@ export function showAlertSoldOut() {
     if (
       !e.target.classList.contains("alert") &&
       !e.target.classList.contains("bx-x-circle") &&
-      !e.target.classList.contains("alarm") &&
-      !e.target.classList.contains("text__description")
+      !e.target.classList.contains("alarm__out") &&
+      !e.target.classList.contains("text__description__out")
     ) {
       alertOutStockHTML.classList.remove("alert__out__stock__show");
       alertsHTML.classList.remove("alerts__show");
@@ -41,7 +35,6 @@ export function showAlertBuy(res) {
   document.querySelector(".btn__buy").addEventListener("click", () => {
     const alertsHTML = document.querySelector(".alerts");
     const alertBuyHTML = document.querySelector(".alert__buy");
-
 
     alertsHTML.classList.add("alerts__show");
     alertBuyHTML.classList.add("alert__buy__show");
@@ -60,9 +53,9 @@ export function showAlertBuy(res) {
 
       if (
         !e.target.classList.contains("alert") &&
-        !e.target.classList.contains("bx-x-circle") &&
-        !e.target.classList.contains("alarm") &&
-        !e.target.classList.contains("text__description")
+        !e.target.classList.contains("bx-check-circle") &&
+        !e.target.classList.contains("alarm__buy") &&
+        !e.target.classList.contains("text__description__buy")
       ) {
         alertsHTML.classList.remove("alerts__show");
 
@@ -74,34 +67,37 @@ export function showAlertBuy(res) {
   });
 }
 
-// export function confirmButton(
-//   alarm,
-//   textDescription,
-//   btnConfirm,
-//   deleteUser,
-//   id,
-//   res
-// ) {
-//   showAlerts(alarm, textDescription, btnConfirm, deleteUser);
-//   const alertsHTML = document.querySelector(".alerts");
+export function showAlertDelete(res, id) {
+  const alertsHTML = document.querySelector(".alerts");
+  const alertDeletekHTML = document.querySelector(".alert__delete");
 
-//   document.querySelector(".alert__delete").classList.add("alert__delete__show");
+  alertsHTML.classList.add("alerts__show");
+  alertDeletekHTML.classList.add("alert__delete__show");
+  blurEffectAdd();
 
-//   let confirm = false;
+  alertsHTML.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete")) {
+      alertsHTML.classList.remove("alerts__show");
+      alertDeletekHTML.classList.remove("alert__delete__show");
 
-//   alertsHTML.addEventListener("click", (e) => {
-//     if (e.target.classList.contains("delete")) {
-//       alertsHTML.classList.remove("alerts__show");
-//       blurEffectRemove();
-//       confirm = true;
-//       delete res.cart[id];
+      blurEffectRemove();
 
-//       localStorage.setItem("cart", JSON.stringify(res.cart));
-//       printToCart(res);
-//       printTotal(res);
-//     }
-//     confirm = false;
-//   });
+      delete res.cart[id];
+    }
 
-//   return confirm;
-// }
+    if (
+      !e.target.classList.contains("alert") &&
+      !e.target.classList.contains("bx-x-circle") &&
+      !e.target.classList.contains("alarm__dlt") &&
+      !e.target.classList.contains("text__description__dlt")
+    ) {
+      alertDeletekHTML.classList.remove("alert__delete__show");
+      alertsHTML.classList.remove("alerts__show");
+      blurEffectRemove();
+    }
+
+    localStorage.setItem("cart", JSON.stringify(res.cart));
+    printToCart(res);
+    printTotal(res);
+  });
+}

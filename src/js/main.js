@@ -6,19 +6,17 @@ import { printToCart } from "./ui.js";
 
 import { printTotal } from "./ui.js";
 
-import { payButton } from "./pay-button.js";
-
-import { addToCartFromModals, addToCartFromProducts } from "./handles.js";
+import { addToCartFromProducts } from "./handles.js";
 
 import { handleProductsCart } from "./handles.js";
 
-import { showCart } from "./modals-shows.js";
+import { showCart, ShowMennuResponsive } from "./show-cart-and-menu.js";
 
 import { showMenu } from "./show-nav.js";
 
 import { printExpandCards } from "./ui.js";
 
-import { filterMixItUp } from "./filter-mixItUp.js";
+import { filterMixItUp, btnsActive } from "./filter-mixItUp.js";
 
 import { printModals } from "./modals-shows.js";
 
@@ -40,11 +38,12 @@ async function main() {
   printToCart(res);
   handleProductsCart(res);
   printTotal(res);
-  payButton(res);
   printExpandCards(res);
   filterMixItUp();
   printModals(res);
-  showAlertBuy(res)
+  showAlertBuy(res);
+  ShowMennuResponsive();
+  btnsActive()
 
   window.onscroll = () => {
     showMenu();
@@ -54,14 +53,10 @@ async function main() {
     const loaderHTML = document.querySelector("#loader");
     loaderHTML.classList.add("loader__hiden");
     document.body.classList.remove("hidden");
-  }, 100);
+  }, 2000);
 
-  document.querySelector(".bx-menu-alt-right").addEventListener("click", () => {
-    document
-      .querySelector(".menu__responsive")
-      .classList.toggle("hidden__menu");
-  });
 
+  
 
 }
 

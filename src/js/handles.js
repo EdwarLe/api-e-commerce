@@ -2,7 +2,7 @@ import { printToCart } from "./ui.js";
 
 import { printTotal } from "./ui.js";
 
-import { showAlertSoldOut } from "./show-alerts.js";
+import { showAlertSoldOut, showAlertDelete } from "./show-alerts.js";
 
 import { blurEffectRemove } from "./blur-effect.js";
 
@@ -42,11 +42,7 @@ export function handleProductsCart(res) {
     if (e.target.classList.contains("bx")) {
       if (e.target.classList.contains("bx-minus")) {
         if (res.cart[id].ammount === 1) {
-          confirmButton(
-            "Heyyyyy!!!!!",
-            "¿Estás seguro que no quieres llevarte este maravilloso producto?", null,
-            "Si, eliminar", id, res
-          );
+          showAlertDelete(res, id);
         } else {
           res.cart[id].ammount--;
         }
@@ -61,10 +57,8 @@ export function handleProductsCart(res) {
       }
 
       if (e.target.classList.contains("bxs-trash")) {
-        const response = confirm("ya no hay más");
-        if (response) delete res.cart[id];
+        showAlertDelete(res, id);
       }
-
       localStorage.setItem("cart", JSON.stringify(res.cart));
       printToCart(res);
       printTotal(res);

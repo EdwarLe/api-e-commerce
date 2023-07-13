@@ -113,7 +113,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 5000;
 }
 
-.implements > .bx {
+.implements > .bx, .moon__sun >.bx {
   font-size: 2rem;
   position: relative;
   cursor: pointer;
@@ -244,6 +244,12 @@ body::-webkit-scrollbar-thumb {
 
 .btn__filter:hover,
 .btn__buy:hover {
+  border: var(--primary) solid 2px;
+  background-color: var(--secundary);
+  color: var(--primary);
+}
+
+.btn__filter--active {
   border: var(--primary) solid 2px;
   background-color: var(--secundary);
   color: var(--primary);
@@ -782,6 +788,15 @@ body.dark__mode {
   display: flex;
 }
 
+
+/* ----BTN-UP---- */
+
+.btn__up {
+  font-size: 2rem;
+  position: fixed;
+}
+
+/* ----RESPONSIVE---- */
 
 @media (max-width:1000px) {
   .modals {
