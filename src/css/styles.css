@@ -15,6 +15,7 @@
   --color-price: #333333;
   --primary: #910303;
   --color-letters: #000000;
+  --socials: #486966;
 }
 
 html {
@@ -98,7 +99,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bx {
-  color: var(--primary);
+  color: var(--primary)
+}
+
+.bxs-chevron-up-circle {
+  background-color: var(--bg);
+  border-radius: 50%;
 }
 
 .logo > .bx {
@@ -656,13 +662,27 @@ section {
 
 .social li {
   list-style: none;
+  font-size: 2.5rem;
+}
+
+.bxl-instagram-alt:hover, .bxl-github:hover, .bxl-linkedin:hover {
+  color: var(--socials);
+  transform: scale(1.2);
+}
+
+.data__student a {
   font-size: 1.5rem;
+}
+
+.data__student a:hover{
+color: var(--socials);
 }
 
 .social ul {
   display: flex;
   gap: 0.5rem;
 }
+
 
 .data__student {
   display: flex;
@@ -680,6 +700,7 @@ section {
   text-decoration: none;
   color: var(--primary);
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* ----DARKMODE---- */
@@ -695,6 +716,7 @@ body.dark__mode {
   --third: #020111;
   --color-price: #e1e1e9;
   --color-letters: #ffffff;
+  --socials: #C43302;
 }
 
 /* ----SOLD-OUT---- */
@@ -756,7 +778,7 @@ body.dark__mode {
   font-size: 5rem;
 }
 
-.confirm, .delete, .btn__confirm__buy {
+.confirm__out, .delete, .btn__confirm__buy {
   background-color: var(--primary);
   padding: 0.8rem;
   height: 40px;
@@ -771,7 +793,7 @@ body.dark__mode {
   transition: transform 0.2s, background-color 0.2s;
 }
 
-.confirm:hover {
+.confirm__out:hover, .delete:hover, .btn__confirm__buy:hover {
   transform: scale(1.1);
   background-color: var(--color-price);
 }
@@ -796,10 +818,11 @@ body.dark__mode {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   z-index: 500;
   cursor: pointer;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
 .btn__up:hover {
@@ -889,5 +912,9 @@ visibility: visible;
 
     .show__cart {
       right: 0%;
+    }
+
+    .alert {
+      width: 70%;
     }
 }
