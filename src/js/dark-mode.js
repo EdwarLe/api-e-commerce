@@ -4,7 +4,7 @@ export function darkMode() {
   function handleDarkMode () {
     if(document.body.classList.contains('dark__mode')) {
       document.body.classList.remove('dark__mode');
-      bxsSunHTML.innerHTML = `<i class='bx bxs-moon'></i>`
+      bxsSunHTML.innerHTML = `<i class='bx bxs-moon bx-spin-hover'></i>`
       localStorage.removeItem('darkMode')
     } else {
       document.body.classList.add('dark__mode')
@@ -19,6 +19,8 @@ export function darkMode() {
 
   if(darkModeSave) {
     document.body.classList.add('dark__mode')
-    bxsSunHTML.innerHTML = `<i class='bx bxs-moon'></i>`
+    bxsSunHTML.innerHTML = `<i class='bx bxs-sun bx-spin-hover'></i>`
+  } else {
+    bxsSunHTML.innerHTML = `<i class='bx bxs-moon bx-spin-hover'></i>`
   }
 }
