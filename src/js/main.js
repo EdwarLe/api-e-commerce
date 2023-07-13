@@ -24,6 +24,8 @@ import { darkMode } from "./dark-mode.js";
 
 import { showAlertBuy } from "./show-alerts.js";
 
+import { cursorNotAllowedImg } from "./cursor-img.js";
+
 async function main() {
   const res = {
     products:
@@ -44,6 +46,7 @@ async function main() {
   showAlertBuy(res);
   ShowMennuResponsive();
   btnsActive()
+  cursorNotAllowedImg()
 
   window.onscroll = () => {
     showMenu();
@@ -55,6 +58,18 @@ async function main() {
     document.body.classList.remove("hidden");
   }, 2000);
 
+const btnUpOn = document.querySelector('.btn__up')
+
+btnUpOn.addEventListener('click', () => window.scrollTo(0, 0))
+
+const addBtnScroll = () => {
+  if(window.scrollY < 150) {
+    btnUpOn.classList.remove('btn__up__on')
+  } else {
+    btnUpOn.classList.add('btn__up__on')
+  }
+}
+  
 
   
 

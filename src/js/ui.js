@@ -5,6 +5,11 @@ export function printProducts(res) {
     html += `
                   <div class="product ${category}">
                     <img src="${image}" alt="${name}" class="img__select" id=${id}>
+                    ${
+                      quantity
+                        ? `<i class='bx bx-plus btn-add' id=${id}></i>`
+                        : "<p class='sold__out'>Sold Out</p>"
+                    }
                     <div class="info__product">
                       <div class="info__price">
                         <p><b>$${price}.00</b></p>
@@ -12,11 +17,7 @@ export function printProducts(res) {
                       </div>
                       <p>${name}</p>
                       </div>
-                      ${
-                        quantity
-                          ? `<i class='bx bx-plus btn-add' id=${id}></i>`
-                          : "<p class='sold__out'>Sold Out</p>"
-                      }
+                      
                   </div>`;
   });
   document.querySelector(".products").innerHTML = html;

@@ -261,7 +261,7 @@ body::-webkit-scrollbar-thumb {
   width: 80%;
   display: block;
   transition: transform 0.2s;
-  cursor: pointer;
+  cursor: zoom-in;
   margin: 1rem auto;
 }
 
@@ -794,6 +794,21 @@ body.dark__mode {
 .btn__up {
   font-size: 2rem;
   position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  /* opacity: 0;
+  visibility: hidden; */
+  z-index: 500;
+  cursor: pointer;
+}
+
+.btn__up:hover {
+  color: var(--color-price);
+}
+
+.btn__up__on {
+opacity: 1;
+visibility: visible;
 }
 
 /* ----RESPONSIVE---- */

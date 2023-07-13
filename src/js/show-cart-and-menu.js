@@ -1,3 +1,5 @@
+import { blurEffectRemove } from "./blur-effect.js";
+
 export function ShowMennuResponsive() {
   document.querySelector(".bx-menu-alt-right").addEventListener("click", () => {
     document
