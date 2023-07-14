@@ -32,38 +32,43 @@ export function showAlertSoldOut() {
 }
 
 export function showAlertBuy(res) {
+
   document.querySelector(".btn__buy").addEventListener("click", () => {
-    const alertsHTML = document.querySelector(".alerts");
-    const alertBuyHTML = document.querySelector(".alert__buy");
+    if (!Object.entries(res.cart).length) {
+      showAlertNotBuy();
+    } else {
+      const alertsHTML = document.querySelector(".alerts");
+      const alertBuyHTML = document.querySelector(".alert__buy");
 
-    alertsHTML.classList.add("alerts__show");
-    alertBuyHTML.classList.add("alert__buy__show");
+      alertsHTML.classList.add("alerts__show");
+      alertBuyHTML.classList.add("alert__buy__show");
 
-    blurEffectAdd();
+      blurEffectAdd();
 
-    alertsHTML.addEventListener("click", (e) => {
-      if (e.target.classList.contains("btn__confirm__buy")) {
-        alertsHTML.classList.remove("alerts__show");
-        alertBuyHTML.classList.remove("alert__buy__show");
+      alertsHTML.addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn__confirm__buy")) {
+          alertsHTML.classList.remove("alerts__show");
+          alertBuyHTML.classList.remove("alert__buy__show");
 
-        blurEffectRemove();
+          blurEffectRemove();
 
-        payButton(res);
-      }
+          payButton(res);
+        }
 
-      if (
-        !e.target.classList.contains("alert") &&
-        !e.target.classList.contains("bx-check-circle") &&
-        !e.target.classList.contains("alarm__buy") &&
-        !e.target.classList.contains("text__description__buy")
-      ) {
-        alertsHTML.classList.remove("alerts__show");
+        if (
+          !e.target.classList.contains("alert") &&
+          !e.target.classList.contains("bx-check-circle") &&
+          !e.target.classList.contains("alarm__buy") &&
+          !e.target.classList.contains("text__description__buy")
+        ) {
+          alertsHTML.classList.remove("alerts__show");
 
-        alertBuyHTML.classList.remove("alert__buy__show");
+          alertBuyHTML.classList.remove("alert__buy__show");
 
-        blurEffectRemove();
-      }
-    });
+          blurEffectRemove();
+        }
+      });
+    }
   });
 }
 
@@ -99,5 +104,34 @@ export function showAlertDelete(res, id) {
     localStorage.setItem("cart", JSON.stringify(res.cart));
     printToCart(res);
     printTotal(res);
+  });
+}
+
+export function showAlertNotBuy() {
+  const alertsHTML = document.querySelector(".alerts");
+  const alertNotBuyHTML = document.querySelector(".alert__not__buy");
+
+  alertsHTML.classList.add("alerts__show");
+  alertNotBuyHTML.classList.add("alert__not__buy__show");
+  blurEffectAdd();
+
+  alertsHTML.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn__confirm__not__buy")) {
+      alertsHTML.classList.remove("alerts__show");
+      alertNotBuyHTML.classList.remove("alert__not__buy__show");
+
+      blurEffectRemove();
+    }
+
+    if (
+      !e.target.classList.contains("alert__not__buy") &&
+      !e.target.classList.contains("bx-x-circle") &&
+      !e.target.classList.contains("alarm__not__buy") &&
+      !e.target.classList.contains("text__description__not__buy")
+    ) {
+      alertNotBuyHTML.classList.remove("alert__not__buy__show");
+      alertsHTML.classList.remove("alerts__show");
+      blurEffectRemove();
+    }
   });
 }

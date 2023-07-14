@@ -78,23 +78,23 @@ export function printExpandCards(res) {
               <img src="${shirt[0].image}" alt="${shirt[0].name}">
               <div class="info__expand">
                 <p>${shirt[0].description}</p>
-                <a href="#filters">VER MÁS</a>
+                <a href="#filters" id="shirt" data-filter=".shirt" class="btn__expand__filter">VER MÁS</a>
               </div>
             </div>
             <div class="img__expand">
               <img src="${hoddie[0].image}" alt="${hoddie[0].name}">
               <div class="info__expand">
                 <p>${hoddie[0].description}</p>
-                <a href="#filters">VER MÁS</a>
+                <a href="#filters" id="hoddie" data-filter=".hoddie" class="btn__expand__filter">VER MÁS</a>
               </div>
             </div>
             <div class="img__expand">
               <img src="${sweater[0].image}" alt="${sweater[0].name}">
               <div class="info__expand">
                 <p>${sweater[0].description}</p>
-                <a href="#filters">VER MÁS</a>
+                <a href="#filters" id="sweater" data-filter=".sweater" class="btn__expand__filter">VER MÁS</a>
               </div>
             </div>`;
 
-  document.querySelector(".expand").innerHTML = html;
+  document.querySelector(".imgs__expand").innerHTML = html;
 }

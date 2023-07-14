@@ -11,7 +11,6 @@ export function filterMixItUp() {
 
 export function btnsActive () {
   const btnsFiltersHTML = document.querySelectorAll('.btn__filter')
-
   btnsFiltersHTML.forEach(btn => {
     btn.addEventListener('click', () => {
       btnsFiltersHTML.forEach(btn => {
@@ -20,4 +19,6 @@ export function btnsActive () {
       btn.classList.add('btn__filter--active')
     })
   });
+
+
 }

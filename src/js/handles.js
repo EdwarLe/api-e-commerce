@@ -79,14 +79,13 @@ export function addToCartFromModals(res) {
           document.querySelector(".modals").classList.remove("modals__hidden");
         } else {
           res.cart[FoundProduct.id].ammount++;
-          console.log(res.cart[FoundProduct.id].ammount);
         }
       } else {
         res.cart[FoundProduct.id] = {
           ...FoundProduct,
           ammount: 1,
         };
-        console.log(res.cart[FoundProduct.id].ammount);
+        
       }
       localStorage.setItem("cart", JSON.stringify(res.cart));
       printToCart(res);

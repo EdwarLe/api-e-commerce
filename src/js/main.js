@@ -62,9 +62,6 @@ async function main() {
     document.body.classList.remove("hidden");
   }, 2000);
 
-
-  
-
   
 
 }

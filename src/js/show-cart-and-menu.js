@@ -6,6 +6,22 @@ export function ShowMennuResponsive() {
       .querySelector(".menu__responsive")
       .classList.toggle("hidden__menu");
   });
+
+  document
+    .querySelector(".home")
+    .addEventListener("click", () =>
+      document
+        .querySelector(".menu__responsive")
+        .classList.add("hidden__menu")
+    );
+
+    document
+    .querySelector(".productos__menu")
+    .addEventListener("click", () =>
+      document
+        .querySelector(".menu__responsive")
+        .classList.add("hidden__menu")
+    );
 }
 
 export function showCart() {
