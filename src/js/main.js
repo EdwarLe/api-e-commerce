@@ -31,7 +31,7 @@ import { addBtnScroll, goToUpBtn } from "./goTopBtn.js";
 async function main() {
   const res = {
     products:
-      JSON.parse(localStorage.getItem("products")) || (await getProductsApi()),
+      JSON.parse(localStorage.getItem("products")) || JSON.parse(localStorage.getItem("productsRes")) || (await getProductsApi()),
     cart: JSON.parse(localStorage.getItem("cart")) || {},
   };
 
