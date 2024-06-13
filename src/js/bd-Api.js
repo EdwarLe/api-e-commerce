@@ -1,7 +1,6 @@
 const BASE_URL = "https://ecommercebackend.fundamentos-29.repl.co/";
 const BASE_LOCAL = "https://services-academlo-shopping.onrender.co/";
 const BASE_JSON = "/src/js/api-academlo.json"
-console.log(BASE_JSON)
 
 export async function getProductsApi() {
   try {
